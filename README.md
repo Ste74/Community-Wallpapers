@@ -9,7 +9,7 @@ To minimize size of the manjaro package and to provide the best experience for o
 - You'll need these packages for the tools used here:  
 `imagemagick`, `jhead` and [mozjpeg](https://mozjpeg.codelove.de/binaries.html)
 
-- Convert image to JPG if in another format:  
+- Convert image to JPG if in another format if is a photo, we can accept PNG format if the size is not huge:  
 `mogrify -format jpg <imagefile>`
 
 - Scale down image to match 4K (3840x2400) size:  
