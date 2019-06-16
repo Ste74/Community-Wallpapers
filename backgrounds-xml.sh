@@ -3,7 +3,8 @@
 #set variable
 
 THEME=$(awk '/THEME/ {print $3; exit}' Makefile ) #set automatically name of theme from Makefile
-ABSPATH=/usr/share/backgrounds/$THEME/
+DTHEME=$(awk '/DTHEME/ {print $3; exit}' Makefile )
+ABSPATH=/usr/share/backgrounds/$DTHEME/
 
 if [ -e $THEME.xml ]; then
     rm $THEME.xml
@@ -18,7 +19,7 @@ echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
 echo "OK. Now we are creating $THEME.xml"
 
 # This script is looking for .png and .jpg files only, but you can add here another file types. The "<options>stretched</options>" should work best for unknow sized files.
-for i in *.jpg *.png; do #Note if we add png files simply add $(ls *png)
+for i in *.jpg *.png; do 
 echo "<wallpaper deleted="\"false\"">
 <name>${i::(-4)}</name>
 <filename>${ABSPATH}$i</filename>
